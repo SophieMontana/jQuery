@@ -10,20 +10,8 @@ $(document).ready(function() {
         $('#form').on('click',function() {
         var required = [name, email, phone, message];
         for (i=0; i< required.length; i++) {
-            if (name.length < 1 ) {
+            if (name.length < 1 || email.length <1 || phone.length < 1 || message.length < 1) {
                 $('#name').addClass("warning");
-                alert("Please Fill Out All Required Fields");
-            }
-            if (email.length<1){
-                $('#email').addClass("warning");
-                alert ("Please Fill Out All Required Fields");
-            }
-            if (phone.length < 1) {
-                $('#phone').addClass("warning");
-                alert("Please Fill Out All Required Fields");
-            }
-            if (message.length <1) {
-                $('message-area').addClass("warning");
                 alert("Please Fill Out All Required Fields");
             } else {
                 return true

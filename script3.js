@@ -10,19 +10,19 @@ $(document).ready(function() {
         $('#form').on('click',function() {
         var required = [name, email, phone, message];
         for (i=0; i< required.length; i++) {
-            if (name.length < 1 ) {
+            if (name == " ") {
                 $('#name').addClass("warning");
                 alert("Please Fill Out All Required Fields");
             }
-            if (email.length<1){
+            if (email == " "){
                 $('#email').addClass("warning");
                 alert ("Please Fill Out All Required Fields");
             }
-            if (phone.length < 1) {
+            if (phone == " ") {
                 $('#phone').addClass("warning");
                 alert("Please Fill Out All Required Fields");
             }
-            if (message.length <1) {
+            if (message == " ") {
                 $('message-area').addClass("warning");
                 alert("Please Fill Out All Required Fields");
             } else {
