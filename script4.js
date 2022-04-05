@@ -9,22 +9,12 @@ $(document).ready(function() {
         //validate form
         $('#form').on('click',function() {
         var required = [name, email, phone, message];
+        let emptyStr = "";
         for (i=0; i< required.length; i++) {
-            if (name == "") {
+            if (name == emptyStr || email == emptyStr || phone == emptyStr || message == emptyStr) {
                 $('#name').addClass("warning");
                 $("p").html("Please Fill Out All Required Fields");
-            }
-            if (email == ""){
-                $('#email').addClass("warning");
-                $("p").html("Please Fill Out All Required Fields");
-            }
-            if (phone == "") {
-                $('#phone').addClass("warning");
-                $("p").html("Please Fill Out All Required Fields");
-            }
-            if (message == "") {
-                $('message-area').addClass("warning");
-                $("p").html("Please Fill Out All Required Fields");
+            } else {
                 return true
             };
 

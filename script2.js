@@ -12,7 +12,7 @@ $(document).ready(function() {
         for (i=0; i< required.length; i++) {
             if (name.length < 1 || email.length <1 || phone.length < 1 || message.length < 1) {
                 $('#name').addClass("warning");
-                alert("Please Fill Out All Required Fields");
+                $("p").html("Please Fill Out All Required Fields");
             } else {
                 return true
             };
