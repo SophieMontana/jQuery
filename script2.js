@@ -1,26 +1,23 @@
 $(document).ready(function() {
     $('#submit').on('click', function() {
-        let name=$('#name').val();
-        let email=$('#email').val();
-        let phone =$('#phone').val();
-        let message=$('#message').val();
-        //console.log(name,email,phone,message)
+        let name=$('#name');
+        let email=$('#email');
+        let phone =$('#phone');
 
         //validate form
-        $('#form').on('click',function() {
-        var required = [name, email, phone, message];
-        for (i=0; i< required.length; i++) {
-            if (name.length < 1 || email.length <1 || phone.length < 1 || message.length < 1) {
-                $('#name').addClass("warning");
-                $("p").html("Please Fill Out All Required Fields");
-            } else {
-                return true
-            };
-
-            if (addClass != "warning") {
-                $("h2").text("Thank you for your Feedback!");
-                } 
-            }
+        var required = [name, email, phone];
+        for (let i=0; i< required.length; i++) {
+            if (required[i].val() === "") {
+                required[i].prev().addClass("warning");
+                $("p").html("Please Fill Out All Required Fields").addClass("warning");
+            } else if (required[i].val() !== "") {
+                required[i].prev().removeClass("warning");
+        }};
+        
+        if (!($("label").hasClass("warning"))) {
+            $("form").remove();
+            $('h2').html("Thanks for your feedback!!!");
+            } 
         })
     })
-})
+
